@@ -26,11 +26,7 @@ OFFICER {
     string name
 }
 
-BORROWER {
-    int id PK
-    string name
-    int officer_id FK
-}
+
 
 BORROW {
     int id PK
@@ -42,10 +38,7 @@ BORROW {
 
 CATEGORY ||--o{ BOOKS : classifies
 BOOKSHELF ||--o{ BOOKS : contains
-OFFICER ||--o{ BORROWER : registers
+OFFICER ||--o{ BORROW : registers
 BOOKS ||--o{ BORROW : borrowed_in
-BORROWER ||--o{ BORROW : makes
 
 ```
-
-<!-- USER ||--o{POST : writes -->
